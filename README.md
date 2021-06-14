@@ -5,7 +5,14 @@ A calculator with a support for functions (and fractions - thanks to Clojure).
 
 ## Setup
 
-Run with [Leiningen](https://leiningen.org/):
+[Clojure](https://clojure.org/) and [Leiningen](https://leiningen.org/) have to be installed and configured.
+
+Run tests:
+```
+lein test
+```
+
+Run the calculator:
 ```
 lein run
 ```
