@@ -1,0 +1,25 @@
+(ns calculator.utils-test
+  (:require [clojure.test :refer [deftest testing is]]
+            [calculator.utils :refer [smart-cast]]))
+
+(deftest smart-cast-test
+  (is (= 0 (smart-cast 0)))
+  (is (= 0 (smart-cast 0.0)))
+  (is (= 0 (smart-cast 0/8)))
+  (is (= 0 (smart-cast -0)))
+  (is (= 0 (smart-cast -0.0)))
+  (is (= 0 (smart-cast -0/8)))
+  (is (= 20 (smart-cast 20)))
+  (is (= 20 (smart-cast 20.0)))
+  (is (= -20 (smart-cast -20)))
+  (is (= -20 (smart-cast -20.0)))
+  (is (= 2 (smart-cast 2.0)))
+  (is (= 1054 (smart-cast 1054.0)))
+  (is (= 4.5 (smart-cast 4.5)))
+  (is (= -4.5 (smart-cast -4.5)))
+  (is (= 1.00000001 (smart-cast 1.00000001)))
+  (is (= -0.000000000000000002 (smart-cast -0.000000000000000002)))
+  (is (= "abc" (smart-cast "abc")))
+  (is (= :hello (smart-cast :hello)))
+  (is (= nil (smart-cast nil)))
+  )
