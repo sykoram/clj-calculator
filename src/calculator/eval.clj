@@ -53,8 +53,8 @@
   (first
    (reduce (fn [out tok]
              (cond
-               (number? tok) (conj out tok)
-               (c/constants tok) (conj out (get-in c/constants [tok :val]))
+               (number? tok) (conj out (u/smart-cast tok))
+               (c/constants tok) (conj out (u/smart-cast (get-in c/constants [tok :val])))
                :else (let [op-fn (or (c/operators tok) (c/functions tok))
                            n-args (:args op-fn)]
                        (conj (drop n-args out)
