@@ -56,6 +56,7 @@
 (deftest eval-rpn-test
   (testing "simple"
     (is (= 1 (eval-rpn [1])))
+    (is (= 2 (eval-rpn [2.0])))
     (is (= 3 (eval-rpn [1 2 :add])))
     (is (= -1 (eval-rpn [1 2 :sub])))
     (is (= 8 (eval-rpn [2 4 :mul])))

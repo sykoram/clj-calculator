@@ -5,10 +5,12 @@
 (deftest evaluate-test
   (testing "simple"
     (is (= 1 (evaluate "1")))
+    (is (= 1 (evaluate "1.00")))
     (is (= 4.2 (evaluate "1 +3.2")))
     (is (= 80 (evaluate "10 * (2--6)")))
     (is (= 1024 (evaluate "2^-(5-15)")))
     (is (= 1/3 (evaluate "120/360")))
+    (is (= 2/3 (evaluate "2.0/3.0")))
     (is (= 4 (evaluate "sqrt(16)")))
     (is (= -1 (evaluate "sgn(-8)")))
     (is (= 10 (evaluate "log(2, 1024)")))
@@ -26,6 +28,7 @@
     (is (= 120 (evaluate "5!")))
     (is (= -120 (evaluate "-5!")))
     (is (= 0.25 (evaluate "double(2/8)")))
+    (is (= 120 (evaluate "5.0!")))
     )
   (testing "complex"
     (is (= -8 (evaluate "-(-1--2)-(3)--(-4)")))
@@ -38,4 +41,5 @@
     (is (= -3072 (evaluate "-2!*2^3!*4!")))
     (is (= -125/27 (evaluate "(-5/3)^3")))
     (is (= -27/125 (evaluate "(-5/3)^-3")))
+    (is (= 120 (evaluate "sqrt(25)!")))
     ))

@@ -35,6 +35,7 @@
     (is (= [0] (parse-expression "0")))
     (is (= [1] (parse-expression "1")))
     (is (= [42] (parse-expression "42")))
+    (is (= [4.2] (parse-expression "4.2")))
     (is (= [:e] (parse-expression " e ")))
     (is (= [:pi] (parse-expression "pi")))
     (is (= [:phi] (parse-expression "phi")))
